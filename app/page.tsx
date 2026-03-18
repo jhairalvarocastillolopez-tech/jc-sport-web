@@ -359,6 +359,72 @@ const productosMujeres = [
       "Hola, quiero consultar stock del Adidas Terrex Skychaser AX5 GTX W para mujer, precio S/389.00, otras tiendas S/459.00, tallas 36 y 36.5",
     tallas: "36 • 36.5",
   },
+{
+  nombre: "Adidas Court 24",
+  categoria: "Mujer",
+  precio: "S/229.00",
+  otrasTiendas: "S/299.00",
+  stock: "Disponible",
+  imagen: "/images/adidas-court-24-mujer.jpg",
+  mensaje:
+    "Hola, quiero consultar stock del Adidas Court 24 para mujer, precio S/229.00, otras tiendas S/299.00, tallas 36, 36.5, 37.5, 38 y 38.5",
+  tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+},
+{
+  nombre: "Adidas Terrex Tracefinder 2 W",
+  categoria: "Mujer",
+  precio: "S/174.90",
+  otrasTiendas: "S/199.00",
+  stock: "Disponible",
+  imagen: "/images/adidas-terrex-tracefinder-2-w-mujer.jpg",
+  mensaje:
+    "Hola, quiero consultar stock del Adidas Terrex Tracefinder 2 W para mujer, precio S/174.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5 y 38",
+  tallas: "36 • 36.5 • 37.5 • 38",
+},
+{
+  nombre: "Adidas Runblaze W",
+  categoria: "Mujer",
+  precio: "S/159.90",
+  otrasTiendas: "S/179.00",
+  stock: "Disponible",
+  imagen: "/images/adidas-runblaze-w-mujer.jpg",
+  mensaje:
+    "Hola, quiero consultar stock del Adidas Runblaze W para mujer, precio S/159.90, otras tiendas S/179.00, tallas 36, 36.5, 37.5, 38 y 38.5",
+  tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+},
+{
+  nombre: "Adidas Runfalcon 5W",
+  categoria: "Mujer",
+  precio: "S/179.90",
+  otrasTiendas: "S/199.00",
+  stock: "Disponible",
+  imagen: "/images/adidas-runfalcon-5w-mujer.jpg",
+  mensaje:
+    "Hola, quiero consultar stock del Adidas Runfalcon 5W para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36 y 36.5",
+  tallas: "36 • 36.5",
+},
+{
+  nombre: "Adidas Questar 3",
+  categoria: "Mujer",
+  precio: "S/269.90",
+  otrasTiendas: "S/299.00",
+  stock: "Disponible",
+  imagen: "/images/adidas-questar-3-mujer.jpg",
+  mensaje:
+    "Hola, quiero consultar stock del Adidas Questar 3 para mujer, precio S/269.90, otras tiendas S/299.00, tallas 36, 36.5, 37.5 y 38",
+  tallas: "36 • 36.5 • 37.5 • 38",
+},
+{
+  nombre: "Adidas Galaxy 7",
+  categoria: "Mujer",
+  precio: "S/179.90",
+  otrasTiendas: "S/199.00",
+  stock: "Disponible",
+  imagen: "/images/adidas-galaxy-7-mujer.jpg",
+  mensaje:
+    "Hola, quiero consultar stock del Adidas Galaxy 7 para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5, 38 y 38.5",
+  tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+},
 ];
 
 type ImagenModal = {
