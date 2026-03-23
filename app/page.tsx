@@ -359,93 +359,383 @@ const productosMujeres = [
       "Hola, quiero consultar stock del Adidas Terrex Skychaser AX5 GTX W para mujer, precio S/389.00, otras tiendas S/459.00, tallas 36 y 36.5",
     tallas: "36 • 36.5",
   },
-{
-  nombre: "Adidas Court 24",
-  categoria: "Mujer",
-  precio: "S/229.00",
-  otrasTiendas: "S/299.00",
-  stock: "Disponible",
-  imagen: "/images/adidas-court-24-mujer.jpg",
-  mensaje:
-    "Hola, quiero consultar stock del Adidas Court 24 para mujer, precio S/229.00, otras tiendas S/299.00, tallas 36, 36.5, 37.5, 38 y 38.5",
-  tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
-},
-{
-  nombre: "Adidas Terrex Tracefinder 2 W",
-  categoria: "Mujer",
-  precio: "S/174.90",
-  otrasTiendas: "S/199.00",
-  stock: "Disponible",
-  imagen: "/images/adidas-terrex-tracefinder-2-w-mujer.jpg",
-  mensaje:
-    "Hola, quiero consultar stock del Adidas Terrex Tracefinder 2 W para mujer, precio S/174.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5 y 38",
-  tallas: "36 • 36.5 • 37.5 • 38",
-},
-{
-  nombre: "Adidas Runblaze W",
-  categoria: "Mujer",
-  precio: "S/159.90",
-  otrasTiendas: "S/179.00",
-  stock: "Disponible",
-  imagen: "/images/adidas-runblaze-w-mujer.jpg",
-  mensaje:
-    "Hola, quiero consultar stock del Adidas Runblaze W para mujer, precio S/159.90, otras tiendas S/179.00, tallas 36, 36.5, 37.5, 38 y 38.5",
-  tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
-},
-{
-  nombre: "Adidas Runfalcon 5W",
-  categoria: "Mujer",
-  precio: "S/179.90",
-  otrasTiendas: "S/199.00",
-  stock: "Disponible",
-  imagen: "/images/adidas-runfalcon-5w-mujer.jpg",
-  mensaje:
-    "Hola, quiero consultar stock del Adidas Runfalcon 5W para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36 y 36.5",
-  tallas: "36 • 36.5",
-},
-{
-  nombre: "Adidas Questar 3",
-  categoria: "Mujer",
-  precio: "S/269.90",
-  otrasTiendas: "S/299.00",
-  stock: "Disponible",
-  imagen: "/images/adidas-questar-3-mujer.jpg",
-  mensaje:
-    "Hola, quiero consultar stock del Adidas Questar 3 para mujer, precio S/269.90, otras tiendas S/299.00, tallas 36, 36.5, 37.5 y 38",
-  tallas: "36 • 36.5 • 37.5 • 38",
-},
-{
-  nombre: "Adidas Galaxy 7",
-  categoria: "Mujer",
-  precio: "S/179.90",
-  otrasTiendas: "S/199.00",
-  stock: "Disponible",
-  imagen: "/images/adidas-galaxy-7-mujer.jpg",
-  mensaje:
-    "Hola, quiero consultar stock del Adidas Galaxy 7 para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5, 38 y 38.5",
-  tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
-},
+  {
+    nombre: "Adidas Court 24",
+    categoria: "Mujer",
+    precio: "S/229.00",
+    otrasTiendas: "S/299.00",
+    stock: "Disponible",
+    imagen: "/images/adidas-court-24-mujer.jpg",
+    mensaje:
+      "Hola, quiero consultar stock del Adidas Court 24 para mujer, precio S/229.00, otras tiendas S/299.00, tallas 36, 36.5, 37.5, 38 y 38.5",
+    tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+  },
+  {
+    nombre: "Adidas Terrex Tracefinder 2 W",
+    categoria: "Mujer",
+    precio: "S/174.90",
+    otrasTiendas: "S/199.00",
+    stock: "Disponible",
+    imagen: "/images/adidas-terrex-tracefinder-2-w-mujer.jpg",
+    mensaje:
+      "Hola, quiero consultar stock del Adidas Terrex Tracefinder 2 W para mujer, precio S/174.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5 y 38",
+    tallas: "36 • 36.5 • 37.5 • 38",
+  },
+  {
+    nombre: "Adidas Runblaze W",
+    categoria: "Mujer",
+    precio: "S/159.90",
+    otrasTiendas: "S/179.00",
+    stock: "Disponible",
+    imagen: "/images/adidas-runblaze-w-mujer.jpg",
+    mensaje:
+      "Hola, quiero consultar stock del Adidas Runblaze W para mujer, precio S/159.90, otras tiendas S/179.00, tallas 36, 36.5, 37.5, 38 y 38.5",
+    tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+  },
+  {
+    nombre: "Adidas Runfalcon 5W",
+    categoria: "Mujer",
+    precio: "S/179.90",
+    otrasTiendas: "S/199.00",
+    stock: "Disponible",
+    imagen: "/images/adidas-runfalcon-5w-mujer.jpg",
+    mensaje:
+      "Hola, quiero consultar stock del Adidas Runfalcon 5W para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36 y 36.5",
+    tallas: "36 • 36.5",
+  },
+  {
+    nombre: "Adidas Galaxy 7",
+    categoria: "Mujer",
+    precio: "S/179.90",
+    otrasTiendas: "S/199.00",
+    stock: "Disponible",
+    imagen: "/images/adidas-galaxy-7-mujer.jpg",
+    mensaje:
+      "Hola, quiero consultar stock del Adidas Galaxy 7 para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5, 38 y 38.5",
+    tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+  },
 ];
+
+const nikeTabla = {
+  titulo: "Nike",
+  columnas: [
+    "5.5",
+    "6",
+    "6.5",
+    "7",
+    "7.5",
+    "8",
+    "8.5",
+    "9",
+    "9.5",
+    "10",
+    "10.5",
+    "11",
+    "11.5",
+    "12",
+    "12.5",
+    "13",
+  ],
+  filas: [
+    {
+      label: "EE. UU. Hombre*",
+      valores: [
+        "5.5",
+        "6",
+        "6.5",
+        "7",
+        "7.5",
+        "8",
+        "8.5",
+        "9",
+        "9.5",
+        "10",
+        "10.5",
+        "11",
+        "11.5",
+        "12",
+        "12.5",
+        "13",
+      ],
+    },
+    {
+      label: "EE. UU. Mujer*",
+      valores: [
+        "7",
+        "7.5",
+        "8",
+        "8.5",
+        "9",
+        "9.5",
+        "10",
+        "10.5",
+        "11",
+        "11.5",
+        "12",
+        "12.5",
+        "13",
+        "13.5",
+        "14",
+        "14.5",
+      ],
+    },
+    {
+      label: "PE",
+      valores: [
+        "37",
+        "37.5",
+        "38",
+        "39",
+        "40",
+        "40.5",
+        "41",
+        "41.5",
+        "42",
+        "43",
+        "43.5",
+        "44",
+        "44.5",
+        "45",
+        "46",
+        "47",
+      ],
+    },
+    {
+      label: "EUR*",
+      valores: [
+        "38",
+        "38.5",
+        "39",
+        "40",
+        "40.5",
+        "41",
+        "42",
+        "42.5",
+        "43",
+        "44",
+        "44.5",
+        "45",
+        "45.5",
+        "46",
+        "47",
+        "47.5",
+      ],
+    },
+    {
+      label: "Largo del pie (cm)",
+      valores: [
+        "24",
+        "24",
+        "24.5",
+        "25",
+        "25.5",
+        "26",
+        "26.5",
+        "27",
+        "27.5",
+        "28",
+        "28.5",
+        "29",
+        "29.5",
+        "30",
+        "30.5",
+        "31",
+      ],
+    },
+  ],
+};
+
+const adidasTabla = {
+  titulo: "adidas",
+  columnas: [
+    "4",
+    "4.5",
+    "5",
+    "5.5",
+    "6",
+    "6.5",
+    "7",
+    "7.5",
+    "8",
+    "8.5",
+    "9",
+    "9.5",
+    "10",
+    "10.5",
+    "11",
+    "11.5",
+  ],
+  filas: [
+    {
+      label: "EE. UU. - Hombre",
+      valores: [
+        "4",
+        "4.5",
+        "5",
+        "5.5",
+        "6",
+        "6.5",
+        "7",
+        "7.5",
+        "8",
+        "8.5",
+        "9",
+        "9.5",
+        "10",
+        "10.5",
+        "11",
+        "11.5",
+      ],
+    },
+    {
+      label: "EE. UU. - Mujer",
+      valores: [
+        "5",
+        "5.5",
+        "6",
+        "6.5",
+        "7",
+        "7.5",
+        "8",
+        "8.5",
+        "9",
+        "9.5",
+        "10",
+        "10.5",
+        "11",
+        "11.5",
+        "12",
+        "12.5",
+      ],
+    },
+    {
+      label: "UE",
+      valores: [
+        "36",
+        "36 2/3",
+        "37 1/3",
+        "38",
+        "38 2/3",
+        "39 1/3",
+        "40",
+        "40 2/3",
+        "41 1/3",
+        "42",
+        "42 2/3",
+        "43 1/3",
+        "44",
+        "44 2/3",
+        "45 1/3",
+        "46",
+      ],
+    },
+    {
+      label: "Punta - talón (cm)",
+      valores: [
+        "22.1",
+        "22.5",
+        "22.9",
+        "23.3",
+        "23.8",
+        "24.2",
+        "24.6",
+        "25.0",
+        "25.5",
+        "25.9",
+        "26.3",
+        "26.7",
+        "27.1",
+        "27.6",
+        "28.0",
+        "28.4",
+      ],
+    },
+  ],
+};
 
 type ImagenModal = {
   src: string;
   nombre: string;
 };
 
+type FilaTabla = {
+  label: string;
+  valores: string[];
+};
+
+type MarcaTablaProps = {
+  titulo: string;
+  columnas: string[];
+  filas: FilaTabla[];
+};
+
+function TablaMarca({ titulo, columnas, filas }: MarcaTablaProps) {
+  const labelWidth = 170;
+  const cellWidth = 72;
+
+  return (
+    <div className="flex h-full min-w-0 flex-col rounded-[1.8rem] border border-black/10 bg-[#fafafa] p-5 shadow-sm sm:p-6">
+      <div className="mb-5 flex items-center justify-between gap-3">
+        <h3 className="text-xl font-black sm:text-2xl">{titulo}</h3>
+        <span className="rounded-full bg-black px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white sm:text-[11px]">
+          Hombre / Mujer
+        </span>
+      </div>
+
+      <div className="flex-1 overflow-hidden rounded-[1.4rem] border border-black/10 bg-white">
+        <div className="border-b border-black/10 bg-black px-4 py-3 text-center text-xs font-black uppercase tracking-[0.18em] text-white sm:text-sm">
+          Guía de tallas
+        </div>
+
+        <div className="flex">
+          <div
+            className="shrink-0 border-r border-black/5 bg-white"
+            style={{ width: labelWidth }}
+          >
+            {filas.map((fila, filaIndex) => (
+              <div
+                key={`${titulo}-label-${filaIndex}`}
+                className="flex items-center border-b border-black/5 px-4 py-4 text-sm font-bold leading-5 text-black last:border-b-0 sm:text-[15px]"
+                style={{ minHeight: 58 }}
+              >
+                {fila.label}
+              </div>
+            ))}
+          </div>
+
+          <div className="min-w-0 flex-1 overflow-x-auto">
+            <div style={{ minWidth: columnas.length * cellWidth }}>
+              {filas.map((fila, filaIndex) => (
+                <div
+                  key={`${titulo}-row-${filaIndex}`}
+                  className="flex border-b border-black/5 last:border-b-0"
+                >
+                  {fila.valores.map((valor, valorIndex) => (
+                    <div
+                      key={`${titulo}-valor-${filaIndex}-${valorIndex}`}
+                      className="flex items-center justify-center border-r border-black/5 px-2 py-4 text-center text-sm text-black last:border-r-0 sm:text-[15px]"
+                      style={{
+                        width: cellWidth,
+                        minWidth: cellWidth,
+                        minHeight: 58,
+                      }}
+                    >
+                      {valor}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [imagenSeleccionada, setImagenSeleccionada] =
     useState<ImagenModal | null>(null);
-
-  const categorias = [
-    "Hombre",
-    "Mujer",
-    "Niños",
-    "Running",
-    "Urbano",
-    "Fútbol",
-  ];
-
-  const marcas = ["Nike", "Adidas", "Puma", "Reebok"];
 
   const beneficios = [
     "Atención rápida por WhatsApp",
@@ -459,11 +749,8 @@ export default function Home() {
 
   const seccionesMobile = [
     { nombre: "Inicio", id: "inicio" },
-    { nombre: "Categorías", id: "categorias" },
-    { nombre: "Marcas", id: "marcas" },
     { nombre: "Hombres", id: "hombres" },
     { nombre: "Mujeres", id: "mujeres" },
-    { nombre: "Mayoristas", id: "mayoristas" },
   ];
 
   const irASeccion = (id: string) => {
@@ -515,20 +802,6 @@ export default function Home() {
               </button>
               <button
                 type="button"
-                onClick={() => irASeccion("categorias")}
-                className="transition hover:text-red-600"
-              >
-                Categorías
-              </button>
-              <button
-                type="button"
-                onClick={() => irASeccion("marcas")}
-                className="transition hover:text-red-600"
-              >
-                Marcas
-              </button>
-              <button
-                type="button"
                 onClick={() => irASeccion("hombres")}
                 className="transition hover:text-red-600"
               >
@@ -540,13 +813,6 @@ export default function Home() {
                 className="transition hover:text-red-600"
               >
                 Mujeres
-              </button>
-              <button
-                type="button"
-                onClick={() => irASeccion("mayoristas")}
-                className="transition hover:text-red-600"
-              >
-                Mayoristas
               </button>
             </nav>
 
@@ -661,42 +927,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="categorias"
-          className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16"
-        >
-          <div className="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
-            <img
-              src="/images/logo-jc-sport.png"
-              alt="JC Sport"
-              className="h-12 w-auto object-contain sm:h-16 md:h-20"
-            />
-            <div>
-              <h2 className="text-2xl font-black sm:text-3xl">
-                Compra según tu estilo
-              </h2>
-            </div>
-          </div>
-
-          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-            {categorias.map((item) => (
-              <div
-                key={item}
-                className="rounded-3xl border border-black/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-red-500/30 hover:shadow-lg sm:p-6"
-              >
-                <h3 className="text-lg font-semibold sm:text-xl">{item}</h3>
-                <div className="mt-3 h-[2px] w-12 rounded-full bg-red-600" />
-                <p className="mt-4 text-xs text-black/60 sm:text-sm">
-                  Sección lista para mostrar productos filtrados por categoría.
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="marcas" className="border-y border-black/10 bg-[#fafafa]">
+        <section className="border-y border-black/10 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
-            <div className="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
+            <div className="mb-8 flex items-center gap-3 sm:mb-10 sm:gap-4">
               <img
                 src="/images/logo-jc-sport.png"
                 alt="JC Sport"
@@ -704,88 +937,50 @@ export default function Home() {
               />
               <div>
                 <h2 className="text-2xl font-black sm:text-3xl">
-                  Trabajamos con tus marcas favoritas
+                  Guía de tallas exacta
                 </h2>
+                <p className="mt-1 text-sm text-black/60 sm:text-base">
+                  Referencia de tallas para hombre y mujer en Nike y adidas.
+                </p>
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
-              {marcas.map((marca) => (
-                <div
-                  key={marca}
-                  className="rounded-3xl border border-black/10 bg-white px-4 py-6 text-center text-lg font-black shadow-sm transition hover:border-red-500/30 hover:text-red-600 sm:px-6 sm:py-8 sm:text-xl"
-                >
-                  {marca}
+            <div className="grid auto-rows-fr items-stretch gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_260px]">
+              <div className="h-full min-w-0">
+                <TablaMarca
+                  titulo={nikeTabla.titulo}
+                  columnas={nikeTabla.columnas}
+                  filas={nikeTabla.filas}
+                />
+              </div>
+
+              <div className="h-full min-w-0">
+                <TablaMarca
+                  titulo={adidasTabla.titulo}
+                  columnas={adidasTabla.columnas}
+                  filas={adidasTabla.filas}
+                />
+              </div>
+
+              <button
+                type="button"
+                onClick={() =>
+                  abrirImagen(
+                    "/images/modelo-jc-deportes-producto.jpg",
+                    "Modelo JC Sport presentando producto"
+                  )
+                }
+                className="group h-full min-h-[500px] overflow-hidden rounded-[1.8rem] border border-black/10 bg-[#fafafa] p-2 text-left shadow-sm"
+              >
+                <div className="h-full overflow-hidden rounded-[1.4rem] bg-white">
+                  <img
+                    src="/images/modelo-jc-deportes-producto.jpg"
+                    alt="Modelo JC Sport mostrando zapatilla"
+                    className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.02]"
+                  />
                 </div>
-              ))}
+              </button>
             </div>
-          </div>
-        </section>
-
-        <section className="border-y border-black/10 bg-white">
-          <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-10 sm:px-6 sm:py-16 md:grid-cols-2 md:gap-10">
-            <div className="order-2 md:order-1">
-              <div className="mb-3 flex items-center gap-3 sm:mb-4 sm:gap-4">
-                <img
-                  src="/images/logo-jc-sport.png"
-                  alt="JC Sport"
-                  className="h-12 w-auto object-contain sm:h-16 md:h-20"
-                />
-              </div>
-
-              <h2 className="text-2xl font-black sm:text-3xl">
-                Presentación visual más fuerte para vender mejor
-              </h2>
-
-              <p className="mt-3 max-w-xl text-sm text-black/65 sm:mt-4 sm:text-base">
-                Usa una imagen editorial donde el modelo sostenga el producto.
-                Esto hace que la web se sienta más profesional, más real y con
-                mucha más presencia de marca.
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-3 sm:mt-6 sm:gap-4">
-                <a
-                  href={`https://wa.me/${whatsapp}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-red-600 px-5 py-3 text-xs font-semibold text-white transition hover:bg-red-700 sm:px-6 sm:text-sm"
-                >
-                  Consultar por WhatsApp
-                </a>
-
-                <button
-                  type="button"
-                  onClick={() =>
-                    abrirImagen(
-                      "/images/modelo-jc-deportes-producto.jpg",
-                      "Modelo JC Sport presentando producto"
-                    )
-                  }
-                  className="rounded-full border border-black px-5 py-3 text-xs font-semibold text-black transition hover:bg-black hover:text-white sm:px-6 sm:text-sm"
-                >
-                  Ver imagen completa
-                </button>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() =>
-                abrirImagen(
-                  "/images/modelo-jc-deportes-producto.jpg",
-                  "Modelo JC Sport presentando producto"
-                )
-              }
-              className="order-1 overflow-hidden rounded-[1.6rem] border border-black/10 bg-[#fafafa] p-2 text-left shadow-[0_20px_50px_rgba(0,0,0,0.08)] sm:rounded-[2rem] sm:p-3 md:order-2"
-            >
-              <div className="overflow-hidden rounded-[1.2rem] bg-white sm:rounded-[1.6rem]">
-                <img
-                  src="/images/modelo-jc-deportes-producto.jpg"
-                  alt="Modelo JC Sport mostrando zapatilla"
-                  className="h-full w-full object-cover transition duration-500 hover:scale-[1.02]"
-                />
-              </div>
-            </button>
           </div>
         </section>
 
@@ -952,42 +1147,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="mayoristas"
-          className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16"
-        >
-          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-            <div>
-              <div className="mb-3 flex items-center gap-3 sm:mb-4 sm:gap-4">
-                <img
-                  src="/images/logo-jc-sport.png"
-                  alt="JC Sport"
-                  className="h-12 w-auto object-contain sm:h-16 md:h-20"
-                />
-              </div>
-
-              <h2 className="text-2xl font-black sm:text-3xl">
-                También vendemos para emprendedores
-              </h2>
-
-              <p className="mt-3 max-w-xl text-sm text-black/65 sm:mt-4 sm:text-base">
-                Si quieres comprar por volumen o revender, podemos atenderte con
-                precios especiales, stock por consulta y atención directa.
-              </p>
-            </div>
-
-            <div className="rounded-[1.4rem] border border-black/10 bg-[#fafafa] p-5 shadow-sm sm:rounded-[1.8rem] sm:p-6">
-              <ul className="space-y-3 text-sm text-black/80 sm:text-base">
-                <li>• Atención rápida por WhatsApp</li>
-                <li>• Consulta de stock y tallas</li>
-                <li>• Precios para emprendedores</li>
-                <li>• Productos por marca y categoría</li>
-                <li>• Pedidos directos y simples</li>
-              </ul>
             </div>
           </div>
         </section>
