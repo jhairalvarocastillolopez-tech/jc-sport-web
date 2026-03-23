@@ -2,7 +2,32 @@
 
 import { useState } from "react";
 
-const todosLosProductos = [
+type Producto = {
+  nombre: string;
+  categoria: string;
+  precio: string;
+  otrasTiendas?: string;
+  stock: string;
+  imagen: string;
+  mensaje: string;
+  tallas: string;
+  marca: "Nike" | "adidas";
+};
+
+type ImagenModal =
+  | {
+      tipo: "producto";
+      src: string;
+      nombre: string;
+      producto: Producto;
+    }
+  | {
+      tipo: "simple";
+      src: string;
+      nombre: string;
+    };
+
+const todosLosProductos: Producto[] = [
   {
     nombre: "Nike Air Force 1 07",
     categoria: "Hombre",
@@ -13,6 +38,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Air Force 1 07 para hombre, precio S/349.00, tallas 40, 40.5, 41, 42, 42.5, 43 y 44",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43 • 44",
+    marca: "Nike",
   },
   {
     nombre: "Nike Air Force 1 07",
@@ -24,6 +50,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Air Force 1 07 para hombre color crema, precio S/369.00, tallas 40.5 y 41",
     tallas: "40.5 • 41",
+    marca: "Nike",
   },
   {
     nombre: "Nike Interact Run EasyOn",
@@ -35,6 +62,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Interact Run EasyOn para hombre, precio S/299.00, tallas 42, 43 y 44",
     tallas: "42 • 43 • 44",
+    marca: "Nike",
   },
   {
     nombre: "Jordan Flight Court",
@@ -46,6 +74,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Jordan Flight Court para hombre, precio S/349.00, tallas 40, 41, 42, 42.5, 43 y 44",
     tallas: "40 • 41 • 42 • 42.5 • 43 • 44",
+    marca: "Nike",
   },
   {
     nombre: "Nike Downshift",
@@ -57,6 +86,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Downshift Court para hombre, precio S/199.00, tallas 40, 42, 42.5, 43 y 44",
     tallas: "40 • 42 • 42.5 • 43 • 44",
+    marca: "Nike",
   },
   {
     nombre: "Nike Run Defy",
@@ -68,6 +98,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Run Defy para hombre, precio S/169.00, tallas 40, 42, 42.5, 43 y 44",
     tallas: "40 • 42 • 42.5 • 43 • 44",
+    marca: "Nike",
   },
   {
     nombre: "Nike Mercurial Superfly 10 Club",
@@ -79,6 +110,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Mercurial Superfly 10 Club para hombre, precio S/200.00, tallas 42.5, 43, 44 y 45",
     tallas: "42.5 • 43 • 44 • 45",
+    marca: "Nike",
   },
   {
     nombre: "Grand Court Alpha 00s",
@@ -90,6 +122,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Grand Court Alpha 00s para hombre, precio S/249.00, tallas 40, 40.5, 41, 42 y 43.5",
     tallas: "40 • 40.5 • 41 • 42 • 43.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Break Start",
@@ -101,6 +134,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Break Start para hombre, precio S/209.90, tallas 40, 40.5, 41, 42 y 43.5",
     tallas: "40 • 40.5 • 41 • 42 • 43.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Streettalk",
@@ -112,6 +146,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Streettalk para hombre, precio S/179.90, tallas 40, 40.5, 41, 42, 42.5, 43.5",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Breaknet 3.0",
@@ -123,6 +158,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Breaknet 3.0 para hombre, precio S/209.90, tallas 40, 42.5, 43.5 y 44",
     tallas: "40 • 42.5 • 43.5 • 44",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Barreda",
@@ -134,6 +170,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Barreda para hombre, precio S/229.00, tallas 40, 40.5, 41, 42, 42.5 y 43.5",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Break Start",
@@ -145,6 +182,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Break Start para hombre, precio S/219.00, tallas 40, 40.5, 41, 42, 42.5 y 43.5",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Goleto IX TF",
@@ -157,6 +195,7 @@ const todosLosProductos = [
       "Hola, quiero consultar stock del Adidas Goleto IX TF para hombre, precio S/155.00, tallas 40, 40.5, 41, 42, 42.5, 43.5, 44, 44.5, 45.5, 46 y 46.5",
     tallas:
       "40 • 40.5 • 41 • 42 • 42.5 • 43.5 • 44 • 44.5 • 45.5 • 46 • 46.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas F50 Club IN",
@@ -168,6 +207,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas F50 Club IN para hombre, precio S/229.00, tallas 40, 40.5, 41, 42, 42.5 y 43.5",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43.5",
+    marca: "adidas",
   },
   {
     nombre: "Nike Air Force 1 Mid 07 LE 7",
@@ -179,6 +219,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Air Force 1 Mid 07 LE 7 para hombre, precio S/449.00, tallas 42, 42.5, 43, 44, 44.5 y 46",
     tallas: "42 • 42.5 • 43 • 44 • 44.5 • 46",
+    marca: "Nike",
   },
   {
     nombre: "Nike Air Huarache",
@@ -190,6 +231,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Air Huarache para hombre, precio S/439.00, tallas 42, 42.5, 43 y 44",
     tallas: "42 • 42.5 • 43 • 44",
+    marca: "Nike",
   },
   {
     nombre: "Nike Air Zoom Pegas",
@@ -201,6 +243,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Nike Air Zoom Pegasus para hombre, precio S/369.00, tallas 40, 40.5, 41, 42, 42.5, 43, 44 y 44.5",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43 • 44 • 44.5",
+    marca: "Nike",
   },
   {
     nombre: "Grand Court TD Lifestyle Court Casual",
@@ -212,6 +255,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Grand Court TD Lifestyle Court Casual para hombre, precio S/149.00, tallas 40.5, 41, 42.5, 43.5 y 44.5",
     tallas: "40.5 • 41 • 42.5 • 43.5 • 44.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas VS Pace 2.0",
@@ -223,6 +267,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas VS Pace 2.0 para hombre, precio S/149.00, tallas 40.5, 41, 42, 42.5, 43.5, 44 y 44.5",
     tallas: "40.5 • 41 • 42 • 42.5 • 43.5 • 44 • 44.5",
+    marca: "adidas",
   },
   {
     nombre: "Predator Essentials 25.5 TF",
@@ -234,6 +279,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Predator Essentials 25.5 TF para hombre, precio S/139.00, tallas 40, 40.5, 41, 42, 42.5, 43.5, 44 y 44.5",
     tallas: "40 • 40.5 • 41 • 42 • 42.5 • 43.5 • 44 • 44.5",
+    marca: "adidas",
   },
   {
     nombre: "Predator League TF",
@@ -245,6 +291,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Predator League TF para hombre, precio S/199.00, tallas 41, 42, 42.5, 43.5, 44, 44.5, 45.5, 46 y 46.5",
     tallas: "41 • 42 • 42.5 • 43.5 • 44 • 44.5 • 45.5 • 46 • 46.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas F50 Messi Club Moqueta",
@@ -256,6 +303,7 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas F50 Messi Club Moqueta para hombre, precio S/169.00, otras tiendas S/429.00, tallas 40, 41, 43.5, 44, 44.5 y 46",
     tallas: "40 • 41 • 43.5 • 44 • 44.5 • 46",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Defiant Speed 2 M",
@@ -267,10 +315,11 @@ const todosLosProductos = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Defiant Speed 2 M para hombre, precio S/249.00, otras tiendas S/429.00, tallas 41, 42, 42.5, 43.5, 44 y 44.5",
     tallas: "41 • 42 • 42.5 • 43.5 • 44 • 44.5",
+    marca: "adidas",
   },
 ];
 
-const productosMujeres = [
+const productosMujeres: Producto[] = [
   {
     nombre: "Nike Air Force 1",
     categoria: "Mujeres",
@@ -281,6 +330,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Nike Air Force 1 para mujeres, precio S/349.00, tallas 37.5, 38, 38.5 y 39",
     tallas: "37.5 • 38 • 38.5 • 39",
+    marca: "Nike",
   },
   {
     nombre: "Air Max 90 NN",
@@ -292,6 +342,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Air Max 90 NN para mujer, precio S/449.00, tallas 36, 37.5, 38, 38.5, 39 y 40",
     tallas: "36 • 37.5 • 38 • 38.5 • 39 • 40",
+    marca: "Nike",
   },
   {
     nombre: "Nike Dunk Low Next Nature",
@@ -303,6 +354,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Nike Dunk Low Next Nature para mujer, precio S/449.00, tallas 36.5, 37.5, 38, 38.5, 39 y 40",
     tallas: "36.5 • 37.5 • 38 • 38.5 • 39 • 40",
+    marca: "Nike",
   },
   {
     nombre: "Air Force 1 107 REC 6",
@@ -314,6 +366,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Air Force 1 107 REC 6 para mujer, precio S/449.00, tallas 36, 36.5, 37.5, 38, 38.5, 39 y 40",
     tallas: "36 • 36.5 • 37.5 • 38 • 38.5 • 39 • 40",
+    marca: "Nike",
   },
   {
     nombre: "Adidas Advantage Base 2.0",
@@ -325,6 +378,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Advantage Base 2.0 para mujer, precio S/174.90, otras tiendas S/199.00, tallas 36.5, 37.5, 38, 38.5, 39.5, 40 y 40.5",
     tallas: "36.5 • 37.5 • 38 • 38.5 • 39.5 • 40 • 40.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Barreda",
@@ -336,6 +390,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Barreda para mujer, precio S/219.00, otras tiendas S/249.00, tallas 36, 36.5, 37.5, 38 y 38.5",
     tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Dropset Control Trainer",
@@ -347,6 +402,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Dropset Control Trainer para mujer, precio S/255.90, otras tiendas S/299.00, tallas 36, 36.5 y 37.5",
     tallas: "36 • 36.5 • 37.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Terrex Skychaser AX5 GTX W",
@@ -358,6 +414,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Terrex Skychaser AX5 GTX W para mujer, precio S/389.00, otras tiendas S/459.00, tallas 36 y 36.5",
     tallas: "36 • 36.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Court 24",
@@ -369,6 +426,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Court 24 para mujer, precio S/229.00, otras tiendas S/299.00, tallas 36, 36.5, 37.5, 38 y 38.5",
     tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Terrex Tracefinder 2 W",
@@ -380,6 +438,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Terrex Tracefinder 2 W para mujer, precio S/174.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5 y 38",
     tallas: "36 • 36.5 • 37.5 • 38",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Runblaze W",
@@ -391,6 +450,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Runblaze W para mujer, precio S/159.90, otras tiendas S/179.00, tallas 36, 36.5, 37.5, 38 y 38.5",
     tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Runfalcon 5W",
@@ -402,6 +462,7 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Runfalcon 5W para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36 y 36.5",
     tallas: "36 • 36.5",
+    marca: "adidas",
   },
   {
     nombre: "Adidas Galaxy 7",
@@ -413,322 +474,88 @@ const productosMujeres = [
     mensaje:
       "Hola, quiero consultar stock del Adidas Galaxy 7 para mujer, precio S/179.90, otras tiendas S/199.00, tallas 36, 36.5, 37.5, 38 y 38.5",
     tallas: "36 • 36.5 • 37.5 • 38 • 38.5",
+    marca: "adidas",
   },
 ];
 
-const nikeTabla = {
-  titulo: "Nike",
-  columnas: [
-    "5.5",
-    "6",
-    "6.5",
-    "7",
-    "7.5",
-    "8",
-    "8.5",
-    "9",
-    "9.5",
-    "10",
-    "10.5",
-    "11",
-    "11.5",
-    "12",
-    "12.5",
-    "13",
-  ],
-  filas: [
-    {
-      label: "EE. UU. Hombre*",
-      valores: [
-        "5.5",
-        "6",
-        "6.5",
-        "7",
-        "7.5",
-        "8",
-        "8.5",
-        "9",
-        "9.5",
-        "10",
-        "10.5",
-        "11",
-        "11.5",
-        "12",
-        "12.5",
-        "13",
-      ],
-    },
-    {
-      label: "EE. UU. Mujer*",
-      valores: [
-        "7",
-        "7.5",
-        "8",
-        "8.5",
-        "9",
-        "9.5",
-        "10",
-        "10.5",
-        "11",
-        "11.5",
-        "12",
-        "12.5",
-        "13",
-        "13.5",
-        "14",
-        "14.5",
-      ],
-    },
-    {
-      label: "PE",
-      valores: [
-        "37",
-        "37.5",
-        "38",
-        "39",
-        "40",
-        "40.5",
-        "41",
-        "41.5",
-        "42",
-        "43",
-        "43.5",
-        "44",
-        "44.5",
-        "45",
-        "46",
-        "47",
-      ],
-    },
-    {
-      label: "EUR*",
-      valores: [
-        "38",
-        "38.5",
-        "39",
-        "40",
-        "40.5",
-        "41",
-        "42",
-        "42.5",
-        "43",
-        "44",
-        "44.5",
-        "45",
-        "45.5",
-        "46",
-        "47",
-        "47.5",
-      ],
-    },
-    {
-      label: "Largo del pie (cm)",
-      valores: [
-        "24",
-        "24",
-        "24.5",
-        "25",
-        "25.5",
-        "26",
-        "26.5",
-        "27",
-        "27.5",
-        "28",
-        "28.5",
-        "29",
-        "29.5",
-        "30",
-        "30.5",
-        "31",
-      ],
-    },
-  ],
-};
+const guiaNike = [
+  { hombre: "5.5", mujer: "7", pe: "37", eu: "38", cm: "24" },
+  { hombre: "6", mujer: "7.5", pe: "37.5", eu: "38.5", cm: "24" },
+  { hombre: "6.5", mujer: "8", pe: "38", eu: "39", cm: "24.5" },
+  { hombre: "7", mujer: "8.5", pe: "39", eu: "40", cm: "25" },
+  { hombre: "7.5", mujer: "9", pe: "40", eu: "40.5", cm: "25.5" },
+  { hombre: "8", mujer: "9.5", pe: "40.5", eu: "41", cm: "26" },
+  { hombre: "8.5", mujer: "10", pe: "41", eu: "42", cm: "26.5" },
+  { hombre: "9", mujer: "10.5", pe: "41.5", eu: "42.5", cm: "27" },
+  { hombre: "9.5", mujer: "11", pe: "42", eu: "43", cm: "27.5" },
+  { hombre: "10", mujer: "11.5", pe: "43", eu: "44", cm: "28" },
+  { hombre: "10.5", mujer: "12", pe: "43.5", eu: "44.5", cm: "28.5" },
+  { hombre: "11", mujer: "12.5", pe: "44", eu: "45", cm: "29" },
+];
 
-const adidasTabla = {
-  titulo: "adidas",
-  columnas: [
-    "4",
-    "4.5",
-    "5",
-    "5.5",
-    "6",
-    "6.5",
-    "7",
-    "7.5",
-    "8",
-    "8.5",
-    "9",
-    "9.5",
-    "10",
-    "10.5",
-    "11",
-    "11.5",
-  ],
-  filas: [
-    {
-      label: "EE. UU. - Hombre",
-      valores: [
-        "4",
-        "4.5",
-        "5",
-        "5.5",
-        "6",
-        "6.5",
-        "7",
-        "7.5",
-        "8",
-        "8.5",
-        "9",
-        "9.5",
-        "10",
-        "10.5",
-        "11",
-        "11.5",
-      ],
-    },
-    {
-      label: "EE. UU. - Mujer",
-      valores: [
-        "5",
-        "5.5",
-        "6",
-        "6.5",
-        "7",
-        "7.5",
-        "8",
-        "8.5",
-        "9",
-        "9.5",
-        "10",
-        "10.5",
-        "11",
-        "11.5",
-        "12",
-        "12.5",
-      ],
-    },
-    {
-      label: "UE",
-      valores: [
-        "36",
-        "36 2/3",
-        "37 1/3",
-        "38",
-        "38 2/3",
-        "39 1/3",
-        "40",
-        "40 2/3",
-        "41 1/3",
-        "42",
-        "42 2/3",
-        "43 1/3",
-        "44",
-        "44 2/3",
-        "45 1/3",
-        "46",
-      ],
-    },
-    {
-      label: "Punta - talón (cm)",
-      valores: [
-        "22.1",
-        "22.5",
-        "22.9",
-        "23.3",
-        "23.8",
-        "24.2",
-        "24.6",
-        "25.0",
-        "25.5",
-        "25.9",
-        "26.3",
-        "26.7",
-        "27.1",
-        "27.6",
-        "28.0",
-        "28.4",
-      ],
-    },
-  ],
-};
+const guiaAdidas = [
+  { hombre: "4", mujer: "5", ue: "36", cm: "22.1" },
+  { hombre: "4.5", mujer: "5.5", ue: "36 2/3", cm: "22.5" },
+  { hombre: "5", mujer: "6", ue: "37 1/3", cm: "22.9" },
+  { hombre: "5.5", mujer: "6.5", ue: "38", cm: "23.3" },
+  { hombre: "6", mujer: "7", ue: "38 2/3", cm: "23.8" },
+  { hombre: "6.5", mujer: "7.5", ue: "39 1/3", cm: "24.2" },
+  { hombre: "7", mujer: "8", ue: "40", cm: "24.6" },
+  { hombre: "7.5", mujer: "8.5", ue: "40 2/3", cm: "25.0" },
+  { hombre: "8", mujer: "9", ue: "41 1/3", cm: "25.5" },
+  { hombre: "8.5", mujer: "9.5", ue: "42", cm: "25.9" },
+  { hombre: "9", mujer: "10", ue: "42 2/3", cm: "26.3" },
+  { hombre: "9.5", mujer: "10.5", ue: "43 1/3", cm: "26.7" },
+];
 
-type ImagenModal = {
-  src: string;
-  nombre: string;
-};
-
-type FilaTabla = {
-  label: string;
-  valores: string[];
-};
-
-type MarcaTablaProps = {
-  titulo: string;
-  columnas: string[];
-  filas: FilaTabla[];
-};
-
-function TablaMarca({ titulo, columnas, filas }: MarcaTablaProps) {
-  const labelWidth = 170;
-  const cellWidth = 72;
-
+function TablaGuiaNikeModal() {
   return (
-    <div className="flex h-full min-w-0 flex-col rounded-[1.8rem] border border-black/10 bg-[#fafafa] p-5 shadow-sm sm:p-6">
-      <div className="mb-5 flex items-center justify-between gap-3">
-        <h3 className="text-xl font-black sm:text-2xl">{titulo}</h3>
-        <span className="rounded-full bg-black px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white sm:text-[11px]">
-          Hombre / Mujer
-        </span>
+    <div className="overflow-hidden rounded-2xl border border-black/10 bg-white">
+      <div className="grid grid-cols-5 border-b border-black/10 bg-black px-4 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
+        <span>US H</span>
+        <span>US M</span>
+        <span>PE</span>
+        <span>EU</span>
+        <span>CM</span>
       </div>
 
-      <div className="flex-1 overflow-hidden rounded-[1.4rem] border border-black/10 bg-white">
-        <div className="border-b border-black/10 bg-black px-4 py-3 text-center text-xs font-black uppercase tracking-[0.18em] text-white sm:text-sm">
-          Guía de tallas
+      {guiaNike.map((item, index) => (
+        <div
+          key={`nike-modal-${index}`}
+          className="grid grid-cols-5 border-b border-black/5 px-4 py-3 text-xs last:border-b-0 sm:text-sm"
+        >
+          <span>{item.hombre}</span>
+          <span>{item.mujer}</span>
+          <span>{item.pe}</span>
+          <span>{item.eu}</span>
+          <span>{item.cm}</span>
         </div>
+      ))}
+    </div>
+  );
+}
 
-        <div className="flex">
-          <div
-            className="shrink-0 border-r border-black/5 bg-white"
-            style={{ width: labelWidth }}
-          >
-            {filas.map((fila, filaIndex) => (
-              <div
-                key={`${titulo}-label-${filaIndex}`}
-                className="flex items-center border-b border-black/5 px-4 py-4 text-sm font-bold leading-5 text-black last:border-b-0 sm:text-[15px]"
-                style={{ minHeight: 58 }}
-              >
-                {fila.label}
-              </div>
-            ))}
-          </div>
-
-          <div className="min-w-0 flex-1 overflow-x-auto">
-            <div style={{ minWidth: columnas.length * cellWidth }}>
-              {filas.map((fila, filaIndex) => (
-                <div
-                  key={`${titulo}-row-${filaIndex}`}
-                  className="flex border-b border-black/5 last:border-b-0"
-                >
-                  {fila.valores.map((valor, valorIndex) => (
-                    <div
-                      key={`${titulo}-valor-${filaIndex}-${valorIndex}`}
-                      className="flex items-center justify-center border-r border-black/5 px-2 py-4 text-center text-sm text-black last:border-r-0 sm:text-[15px]"
-                      style={{
-                        width: cellWidth,
-                        minWidth: cellWidth,
-                        minHeight: 58,
-                      }}
-                    >
-                      {valor}
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+function TablaGuiaAdidasModal() {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-black/10 bg-white">
+      <div className="grid grid-cols-4 border-b border-black/10 bg-black px-4 py-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white">
+        <span>US H</span>
+        <span>US M</span>
+        <span>UE</span>
+        <span>CM</span>
       </div>
+
+      {guiaAdidas.map((item, index) => (
+        <div
+          key={`adidas-modal-${index}`}
+          className="grid grid-cols-4 border-b border-black/5 px-4 py-3 text-xs last:border-b-0 sm:text-sm"
+        >
+          <span>{item.hombre}</span>
+          <span>{item.mujer}</span>
+          <span>{item.ue}</span>
+          <span>{item.cm}</span>
+        </div>
+      ))}
     </div>
   );
 }
@@ -736,6 +563,7 @@ function TablaMarca({ titulo, columnas, filas }: MarcaTablaProps) {
 export default function Home() {
   const [imagenSeleccionada, setImagenSeleccionada] =
     useState<ImagenModal | null>(null);
+  const [mostrarGuiaModal, setMostrarGuiaModal] = useState(false);
 
   const beneficios = [
     "Atención rápida por WhatsApp",
@@ -767,12 +595,28 @@ export default function Home() {
     });
   };
 
-  const abrirImagen = (src: string, nombre: string) => {
-    setImagenSeleccionada({ src, nombre });
+  const abrirProducto = (producto: Producto) => {
+    setMostrarGuiaModal(false);
+    setImagenSeleccionada({
+      tipo: "producto",
+      src: producto.imagen,
+      nombre: producto.nombre,
+      producto,
+    });
+  };
+
+  const abrirImagenSimple = (src: string, nombre: string) => {
+    setMostrarGuiaModal(false);
+    setImagenSeleccionada({
+      tipo: "simple",
+      src,
+      nombre,
+    });
   };
 
   const cerrarImagen = () => {
     setImagenSeleccionada(null);
+    setMostrarGuiaModal(false);
   };
 
   return (
@@ -927,63 +771,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-y border-black/10 bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
-            <div className="mb-8 flex items-center gap-3 sm:mb-10 sm:gap-4">
-              <img
-                src="/images/logo-jc-sport.png"
-                alt="JC Sport"
-                className="h-12 w-auto object-contain sm:h-16 md:h-20"
-              />
-              <div>
-                <h2 className="text-2xl font-black sm:text-3xl">
-                  Guía de tallas exacta
-                </h2>
-                <p className="mt-1 text-sm text-black/60 sm:text-base">
-                  Referencia de tallas para hombre y mujer en Nike y adidas.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid auto-rows-fr items-stretch gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_260px]">
-              <div className="h-full min-w-0">
-                <TablaMarca
-                  titulo={nikeTabla.titulo}
-                  columnas={nikeTabla.columnas}
-                  filas={nikeTabla.filas}
-                />
-              </div>
-
-              <div className="h-full min-w-0">
-                <TablaMarca
-                  titulo={adidasTabla.titulo}
-                  columnas={adidasTabla.columnas}
-                  filas={adidasTabla.filas}
-                />
-              </div>
-
-              <button
-                type="button"
-                onClick={() =>
-                  abrirImagen(
-                    "/images/modelo-jc-deportes-producto.jpg",
-                    "Modelo JC Sport presentando producto"
-                  )
-                }
-                className="group h-full min-h-[500px] overflow-hidden rounded-[1.8rem] border border-black/10 bg-[#fafafa] p-2 text-left shadow-sm"
-              >
-                <div className="h-full overflow-hidden rounded-[1.4rem] bg-white">
-                  <img
-                    src="/images/modelo-jc-deportes-producto.jpg"
-                    alt="Modelo JC Sport mostrando zapatilla"
-                    className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-              </button>
-            </div>
-          </div>
-        </section>
-
         <section
           id="hombres"
           className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16"
@@ -1014,7 +801,7 @@ export default function Home() {
               >
                 <button
                   type="button"
-                  onClick={() => abrirImagen(item.imagen, item.nombre)}
+                  onClick={() => abrirProducto(item)}
                   className="block aspect-[4/3] w-full overflow-hidden bg-[#f7f7f7] text-left sm:aspect-square"
                 >
                   <img
@@ -1096,7 +883,7 @@ export default function Home() {
                 >
                   <button
                     type="button"
-                    onClick={() => abrirImagen(item.imagen, item.nombre)}
+                    onClick={() => abrirProducto(item)}
                     className="block aspect-[4/3] w-full overflow-hidden bg-[#f7f7f7] text-left sm:aspect-square"
                   >
                     <img
@@ -1164,12 +951,13 @@ export default function Home() {
 
               <div className="mb-4 h-1 w-16 rounded-full bg-red-600 sm:mb-5 sm:w-20" />
               <h2 className="mt-3 max-w-3xl text-2xl font-black sm:text-3xl md:text-4xl">
-                Más que una tienda: una marca con identidad visual.
+                No vendemos solo zapatillas: proyectamos actitud.
               </h2>
               <p className="mt-3 max-w-2xl text-sm text-white/75 sm:mt-4 sm:text-base">
-                Integra al modelo como imagen principal de campañas, portada,
-                promociones y lanzamientos. Así tu web se ve mucho más premium y
-                profesional.
+                Cada modelo que ves aquí está pensado para elevar tu presencia,
+                tu outfit y tu forma de destacar. JC Sport mezcla estilo,
+                identidad y selección visual para que no compres por comprar,
+                sino para verte mejor.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
@@ -1185,7 +973,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() =>
-                    abrirImagen(
+                    abrirImagenSimple(
                       "/images/modelo-jc-deportes-hero.jpg",
                       "Imagen oficial JC Sport"
                     )
@@ -1200,7 +988,7 @@ export default function Home() {
             <button
               type="button"
               onClick={() =>
-                abrirImagen(
+                abrirImagenSimple(
                   "/images/modelo-jc-deportes-hero.jpg",
                   "Imagen oficial JC Sport"
                 )
@@ -1228,30 +1016,127 @@ export default function Home() {
 
       {imagenSeleccionada && (
         <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/85 p-4"
+          className="fixed inset-0 z-[999] bg-black/80 p-4 sm:p-6"
           onClick={cerrarImagen}
         >
           <div
-            className="relative max-h-[95vh] max-w-[95vw]"
+            className={`relative mx-auto h-full max-h-[95vh] w-full max-w-7xl overflow-hidden rounded-[2rem] bg-white shadow-2xl ${
+              imagenSeleccionada.tipo === "producto"
+                ? "grid lg:grid-cols-[1.2fr_0.8fr]"
+                : "flex items-center justify-center"
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={cerrarImagen}
-              className="absolute -right-2 -top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white text-lg font-bold text-black shadow-lg transition hover:bg-red-600 hover:text-white sm:-right-3 sm:-top-3 sm:h-10 sm:w-10 sm:text-xl"
+              className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg font-bold text-black shadow-lg transition hover:bg-red-600 hover:text-white"
             >
               ×
             </button>
 
-            <img
-              src={imagenSeleccionada.src}
-              alt={imagenSeleccionada.nombre}
-              className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain shadow-2xl"
-            />
+            {imagenSeleccionada.tipo === "producto" ? (
+              <>
+                <div className="flex items-center justify-center bg-[#f7f7f7] p-4 sm:p-6">
+                  <img
+                    src={imagenSeleccionada.src}
+                    alt={imagenSeleccionada.nombre}
+                    className="max-h-[70vh] w-auto max-w-full object-contain"
+                  />
+                </div>
 
-            <p className="mt-4 text-center text-xs font-medium text-white/90 sm:text-sm">
-              {imagenSeleccionada.nombre}
-            </p>
+                <div className="h-full overflow-y-auto border-l border-black/10 bg-white p-5 sm:p-7">
+                  <div className="mb-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-black/45">
+                      {imagenSeleccionada.producto.marca}
+                    </p>
+                    <h3 className="mt-2 text-2xl font-black leading-tight">
+                      {imagenSeleccionada.producto.nombre}
+                    </h3>
+                    <p className="mt-2 text-sm text-black/60">
+                      {imagenSeleccionada.producto.categoria}
+                    </p>
+                  </div>
+
+                  <div className="mb-5 border-b border-black/10 pb-5">
+                    <p className="text-2xl font-black">
+                      {imagenSeleccionada.producto.precio}
+                    </p>
+                    {imagenSeleccionada.producto.otrasTiendas && (
+                      <p className="mt-2 text-sm font-bold text-red-600">
+                        OTRAS TIENDAS: {imagenSeleccionada.producto.otrasTiendas}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="mb-5 flex items-center justify-between gap-3 border-b border-black/10 pb-5">
+                    <div>
+                      <p className="text-sm font-semibold text-black">
+                        Selecciona tu talla
+                      </p>
+                      <p className="mt-2 text-sm text-black/65">
+                        {imagenSeleccionada.producto.tallas}
+                      </p>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setMostrarGuiaModal((prev) => !prev)}
+                      className="shrink-0 rounded-full border border-black px-4 py-2 text-sm font-semibold text-black transition hover:bg-black hover:text-white"
+                    >
+                      Guía de tallas
+                    </button>
+                  </div>
+
+                  {mostrarGuiaModal && (
+                    <div className="mb-5 rounded-[1.4rem] border border-black/10 bg-[#fafafa] p-4">
+                      <div className="mb-3 flex items-center justify-between gap-3">
+                        <h4 className="text-lg font-black">
+                          Guía de tallas {imagenSeleccionada.producto.marca}
+                        </h4>
+                        <span className="rounded-full bg-black px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white">
+                          Referencia
+                        </span>
+                      </div>
+
+                      {imagenSeleccionada.producto.marca === "Nike" ? (
+                        <TablaGuiaNikeModal />
+                      ) : (
+                        <TablaGuiaAdidasModal />
+                      )}
+                    </div>
+                  )}
+
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className="rounded-full bg-black px-3 py-1 text-xs font-semibold text-white">
+                      {imagenSeleccionada.producto.stock}
+                    </span>
+                    <p className="text-sm text-black/55">
+                      Consulta disponibilidad real por WhatsApp.
+                    </p>
+                  </div>
+
+                  <a
+                    href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(
+                      imagenSeleccionada.producto.mensaje
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-red-600"
+                  >
+                    Consultar por WhatsApp
+                  </a>
+                </div>
+              </>
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-[#f7f7f7] p-4">
+                <img
+                  src={imagenSeleccionada.src}
+                  alt={imagenSeleccionada.nombre}
+                  className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain shadow-2xl"
+                />
+              </div>
+            )}
           </div>
         </div>
       )}
