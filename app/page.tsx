@@ -311,7 +311,7 @@ const productosCatalogo: Producto[] = [
     categoria: "hombre",
     coleccion: "select",
     precio: "S/399.00",
-    tallas: ["41", "42" , "42.5", "43", "42"],
+    tallas: ["41", "42" , "42.5", "43", "44"],
     imagen: "/images/air-force-1-07-hombre-crema.jpg",
     otrasTiendas: "S/469.00",
   },
