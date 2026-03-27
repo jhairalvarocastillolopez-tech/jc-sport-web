@@ -344,7 +344,7 @@ const productosCatalogo: Producto[] = [
     categoria: "hombre",
     coleccion: "core",
     precio: "S/199.00",
-    tallas: ["40", "42", "42.5", "43", "44"],
+    tallas: ["42", "42.5", "43", "44"],
     imagen: "/images/nike-downshift-court-hombre.jpg",
     otrasTiendas: "S/229.00",
   },
