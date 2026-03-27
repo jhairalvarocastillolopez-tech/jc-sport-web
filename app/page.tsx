@@ -306,14 +306,14 @@ const productosCatalogo: Producto[] = [
   },
   {
     id: 102,
-    nombre: "Nike Air Force 1 07",
+    nombre: "Nike Air Max E",
     marca: "NIKE",
     categoria: "hombre",
     coleccion: "select",
-    precio: "S/369.00",
-    tallas: ["40.5", "41"],
+    precio: "S/399.00",
+    tallas: ["41", "42" , "42.5", "43", "42"],
     imagen: "/images/air-force-1-07-hombre-crema.jpg",
-    otrasTiendas: "S/549.00",
+    otrasTiendas: "S/469.00",
   },
   {
     id: 103,
