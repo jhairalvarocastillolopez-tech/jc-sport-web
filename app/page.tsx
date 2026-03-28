@@ -98,7 +98,7 @@ const productos: Producto[] = [
     marca: "NIKE",
     categoria: "hombre",
     coleccion: "core",
-    precio: "S/349.00",
+    precio: "S/399.00",
     tallas: ["40", "40.5", "41", "42", "42.5", "43", "44"],
     imagen: "/images/air-force-1-07-hombre.jpg",
     otrasTiendas: "S/549.00",
@@ -171,14 +171,14 @@ const productos: Producto[] = [
   },
   {
     id: 8,
-    nombre: "Adidas Grand Court Alpha 00s",
+    nombre: "Adidas Grand Court 3.0",
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "select",
     precio: "S/249.00",
-    tallas: ["40", "40.5", "41", "42", "43.5"],
+    tallas: ["41", "42", "43.5"],
     imagen: "/images/grand-court-alpha-00s-hombre.jpg",
-    otrasTiendas: "S/279.00",
+    otrasTiendas: "S/259.00",
   },
   {
     id: 9,
@@ -186,10 +186,10 @@ const productos: Producto[] = [
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "core",
-    precio: "S/209.90",
+    precio: "S/235.00",
     tallas: ["40", "40.5", "41", "42", "43.5"],
     imagen: "/images/adidas-break-start-hombre.jpg",
-    otrasTiendas: "S/229.00",
+    otrasTiendas: "S/249.00",
   },
   {
     id: 10,
@@ -197,7 +197,7 @@ const productos: Producto[] = [
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "street",
-    precio: "S/179.90",
+    precio: "S/194.90",
     tallas: ["40", "40.5", "41", "42", "42.5", "43.5"],
     imagen: "/images/adidas-streettalk-hombre.jpg",
     otrasTiendas: "S/209.00",
@@ -237,7 +237,7 @@ const productos: Producto[] = [
   },
   {
     id: 14,
-    nombre: "Adidas F50 Messi Club Moqueta",
+    nombre: "Adidas F50 Messi Club IN",
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "street",
@@ -299,7 +299,7 @@ const productosCatalogo: Producto[] = [
     marca: "NIKE",
     categoria: "hombre",
     coleccion: "core",
-    precio: "S/349.00",
+    precio: "S/399.00",
     tallas: ["40", "40.5", "41", "42", "42.5", "43", "44"],
     imagen: "/images/air-force-1-07-hombre.jpg",
     otrasTiendas: "S/549.00",
@@ -311,7 +311,7 @@ const productosCatalogo: Producto[] = [
     categoria: "hombre",
     coleccion: "select",
     precio: "S/399.00",
-    tallas: ["41", "42" , "42.5", "43", "44"],
+    tallas: ["41", "42", "42.5", "43", "44"],
     imagen: "/images/air-force-1-07-hombre-crema.jpg",
     otrasTiendas: "S/469.00",
   },
@@ -421,7 +421,7 @@ const productosCatalogo: Producto[] = [
     categoria: "hombre",
     coleccion: "select",
     precio: "S/149.00",
-    tallas: ["40", "40.5", "41", "42", "42.5", "43.5" , "44" , "44.5"],
+    tallas: ["40", "40.5", "41", "42", "42.5", "43.5", "44", "44.5"],
     imagen: "/images/adidas-barreda-hombre.jpg",
     otrasTiendas: "S/159.00",
   },
@@ -431,7 +431,7 @@ const productosCatalogo: Producto[] = [
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "select",
-    precio: "S/219.00",
+    precio: "S/235.00",
     tallas: ["40", "40.5", "41", "42", "42.5", "43.5"],
     imagen: "/images/adidas-break-start-hombre-2.jpg",
     otrasTiendas: "S/249.00",
@@ -476,7 +476,7 @@ const productosCatalogo: Producto[] = [
     categoria: "hombre",
     coleccion: "presence",
     precio: "S/329.00",
-    tallas: ["40", "40.5", "41", "42" , "42.5" ,"43.5" ],
+    tallas: ["40", "40.5", "41", "42", "42.5", "43.5"],
     imagen: "/images/nike-air-huarache-hombre.jpg",
     otrasTiendas: "S/349.00",
   },
@@ -509,20 +509,20 @@ const productosCatalogo: Producto[] = [
     categoria: "hombre",
     coleccion: "select",
     precio: "S/165.00",
-    tallas: ["40", "40.5", "41", "42", "42.5", "43.5",],
+    tallas: ["40", "40.5", "41", "42", "42.5", "43.5"],
     imagen: "/images/adidas-vs-pace-2-0-hombre.jpg",
     otrasTiendas: "S/179.00",
   },
   {
     id: 121,
-    nombre: "Adidas Response Runner 2",
+    nombre: "Adidas Runfalcon 5",
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "street",
-    precio: "S/179.00",
-    tallas: ["41", "42", "44", "44.5"],
+    precio: "S/185.00",
+    tallas: ["42"],
     imagen: "/images/predator-essentials-25-5-tf-hombre.jpg",
-    otrasTiendas: "S/189.00",
+    otrasTiendas: "S/199.00",
   },
   {
     id: 122,
@@ -641,7 +641,7 @@ const productosCatalogo: Producto[] = [
     categoria: "mujer",
     coleccion: "presence",
     precio: "S/246.00",
-    tallas: ["36", "36.5" , "37.5", "38" , "38.5"],
+    tallas: ["36", "36.5", "37.5", "38", "38.5"],
     imagen: "/images/adidas-terrex-skychaser-ax5-gtx-w-mujer.jpg",
     otrasTiendas: "S/259.00",
   },
@@ -685,7 +685,7 @@ const productosCatalogo: Producto[] = [
     categoria: "mujer",
     coleccion: "core",
     precio: "S/285.90",
-    tallas: ["36", "36.5" , "37.5", "38", "38.5"],
+    tallas: ["36", "36.5", "37.5", "38", "38.5"],
     imagen: "/images/adidas-runfalcon-5w-mujer.jpg",
     otrasTiendas: "S/299.00",
   },
@@ -1886,11 +1886,7 @@ function CastlStylistModal({
   );
 }
 
-function CastlStylistSection({
-  onOpen,
-}: {
-  onOpen: () => void;
-}) {
+function CastlStylistSection({ onOpen }: { onOpen: () => void }) {
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div className="overflow-hidden rounded-[36px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]">
@@ -1995,11 +1991,7 @@ function CastlStylistSection({
   );
 }
 
-function ComunidadCastelSection({
-  onOpen,
-}: {
-  onOpen: () => void;
-}) {
+function ComunidadCastelSection({ onOpen }: { onOpen: () => void }) {
   const benefits = [
     {
       title: "Canal privado de WhatsApp",
@@ -2091,11 +2083,7 @@ function ComunidadCastelSection({
   );
 }
 
-function ComunidadCastelStepIndicator({
-  step,
-}: {
-  step: 1 | 2 | 3;
-}) {
+function ComunidadCastelStepIndicator({ step }: { step: 1 | 2 | 3 }) {
   const labels = ["Datos base", "Preferencias", "Compra futura"] as const;
 
   return (
@@ -2846,8 +2834,8 @@ export default function Home() {
               </p>
               <div className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-white/85">
                 {coleccionActiva === coleccion.id
-                  ? "Ocultar productos"
-                  : "Ver productos"}
+                  ? "Ocultar colección"
+                  : "Ver colección"}
                 <ArrowRight
                   className={`h-4 w-4 transition ${
                     coleccionActiva === coleccion.id
@@ -2865,36 +2853,31 @@ export default function Home() {
             id="coleccion-detalle"
             className="mt-10 rounded-[32px] border border-white/10 bg-white/[0.02] p-6 sm:p-8"
           >
-            <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-6 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-2xl">
-                <p className="text-[11px] uppercase tracking-[0.34em] text-white/45">
-                  {coleccionSeleccionada.nombre}
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
-                  {coleccionSeleccionada.subtitulo}
-                </h3>
-                <p className="mt-4 text-[11px] uppercase tracking-[0.24em] text-white/38">
-                  {getColeccionEnfoque(coleccionSeleccionada.id)}
-                </p>
-                <p className="mt-5 text-sm leading-7 text-white/62 sm:text-base">
-                  {coleccionSeleccionada.descripcion}
-                </p>
-              </div>
-
-              <div className="text-sm text-white/45">
-                {productosColeccionActiva.length} modelo
-                {productosColeccionActiva.length !== 1 ? "s" : ""}
-              </div>
+            <div className="max-w-2xl">
+              <p className="text-[11px] uppercase tracking-[0.34em] text-white/45">
+                {coleccionSeleccionada.nombre}
+              </p>
+              <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
+                {coleccionSeleccionada.subtitulo}
+              </h3>
+              <p className="mt-4 text-[11px] uppercase tracking-[0.24em] text-white/38">
+                {getColeccionEnfoque(coleccionSeleccionada.id)}
+              </p>
+              <p className="mt-5 text-sm leading-7 text-white/62 sm:text-base">
+                {coleccionSeleccionada.descripcion}
+              </p>
             </div>
 
-            <div className="grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-3">
-              {productosColeccionActiva.map((producto) => (
-                <ProductoCardColeccion
-                  key={`coleccion-${producto.id}`}
-                  producto={producto}
-                  onOpen={setProductoActivo}
-                />
-              ))}
+            <div className="mt-8 rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] px-6 py-12 text-center sm:px-8 sm:py-14">
+              <p className="text-[11px] uppercase tracking-[0.28em] text-white/38">
+                CASTL
+              </p>
+              <h4 className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
+                Próximamente
+              </h4>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/56 sm:text-base">
+                Selección en actualización.
+              </p>
             </div>
           </div>
         )}
