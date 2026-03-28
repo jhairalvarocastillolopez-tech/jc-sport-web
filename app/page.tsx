@@ -453,7 +453,7 @@ const productosCatalogo: Producto[] = [
     marca: "ADIDAS",
     categoria: "hombre",
     coleccion: "street",
-    precio: "S/229.00",
+    precio: "S/239.00",
     tallas: ["40", "40.5", "41", "42", "42.5", "43.5"],
     imagen: "/images/adidas-f50-club-in-hombre.jpg",
     otrasTiendas: "S/259.00",
