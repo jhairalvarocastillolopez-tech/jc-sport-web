@@ -90,6 +90,7 @@ const FACEBOOK_URL = "https://www.facebook.com/castlpe/";
 const TIKTOK_URL = "https://tiktok.com/@castlpe";
 const COMUNIDAD_WHATSAPP_CHANNEL =
   "https://whatsapp.com/channel/0029VbBhbGRD8SDp84fUgM1g";
+
 const productosCatalogo: Producto[] = [
   {
     id: 101,
@@ -855,70 +856,6 @@ function ProductoCard({
   );
 }
 
-function ProductoCardColeccion({
-  producto,
-  onOpen,
-}: {
-  producto: Producto;
-  onOpen: (producto: Producto) => void;
-}) {
-  return (
-    <button
-      onClick={() => onOpen(producto)}
-      className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] text-left transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
-    >
-      <div className="relative h-[260px] w-full shrink-0 overflow-hidden border-b border-white/6 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.09),transparent_58%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/18 to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-center px-2 py-2 sm:px-3 sm:py-3">
-          <img
-            src={producto.imagen}
-            alt={producto.nombre}
-            className="h-full w-full scale-[1.14] object-contain object-center transition duration-500 group-hover:scale-[1.2]"
-          />
-        </div>
-      </div>
-
-      <div className="flex min-h-[235px] flex-1 flex-col justify-between p-5">
-        <div className="space-y-4">
-          <div className="min-h-[74px]">
-            <p className="text-[11px] uppercase tracking-[0.28em] text-white/45">
-              {producto.categoria === "hombre" ? "Hombre" : "Mujer"}
-            </p>
-            <h3 className="mt-2 min-h-[52px] text-lg font-semibold leading-7 text-white">
-              {producto.nombre}
-            </h3>
-          </div>
-
-          <div className="min-h-[92px] space-y-1">
-            <p className="text-base font-medium text-white">{producto.precio}</p>
-            {producto.otrasTiendas ? (
-              <p className="text-sm text-white/55">
-                Precio Retail:{" "}
-                <span className="font-medium text-white/80">
-                  {producto.otrasTiendas}
-                </span>
-              </p>
-            ) : (
-              <div className="h-[20px]" />
-            )}
-            <p className="min-h-[44px] text-sm leading-6 text-white/60">
-              Tallas: {producto.tallas.join(" / ")}
-            </p>
-          </div>
-        </div>
-
-        <div className="pt-2">
-          <div className="inline-flex items-center gap-2 text-sm font-medium text-white/85">
-            Ver detalle
-            <ChevronRight className="h-4 w-4" />
-          </div>
-        </div>
-      </div>
-    </button>
-  );
-}
-
 function TablaGuia({ producto }: { producto: Producto }) {
   const rows = getGuiaTallasRows(producto);
 
@@ -1071,7 +1008,9 @@ function ModalProducto({
                     >
                       Guía de tallas
                       <ChevronDown
-                        className={`h-4 w-4 transition ${mostrarGuia ? "rotate-180" : ""}`}
+                        className={`h-4 w-4 transition ${
+                          mostrarGuia ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
                   </div>
@@ -2502,13 +2441,10 @@ export default function Home() {
   const [comunidadOpen, setComunidadOpen] = useState(false);
 
   const productosFiltrados = useMemo(() => {
-    return productosCatalogo.filter((item) => item.categoria === categoriaActiva);
+    return productosCatalogo.filter(
+      (item) => item.categoria === categoriaActiva
+    );
   }, [categoriaActiva]);
-
-  const productosColeccionActiva = useMemo(() => {
-    if (!coleccionActiva) return [];
-    return productos.filter((item) => item.coleccion === coleccionActiva);
-  }, [coleccionActiva]);
 
   const coleccionSeleccionada = useMemo(() => {
     if (!coleccionActiva) return null;
